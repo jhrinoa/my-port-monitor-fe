@@ -1,0 +1,27 @@
+<h2>Servers</h2>
+<!--<div>
+    <label>New Server:</label> <input #heroName />
+    <button (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</div>-->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Hostname</th>
+            <th>Port</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let server of servers">
+            <td>{{server.ipAddress}}</td>
+            <td>{{server.hostName}}</td>
+            <td>{{server.port}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="delete(hero); $event.stopPropagation()">Check</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
