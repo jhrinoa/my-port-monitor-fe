@@ -20,7 +20,7 @@
             <td>{{server.hostName}}</td>
             <td>{{server.port}}</td>
             <td>
-                <button class="btn btn-primary" (click)="delete(hero); $event.stopPropagation()">Check</button>
+                <button class="btn btn-primary" (click)="onSelect(server); $event.stopPropagation()">Select</button>
             </td>
         </tr>
     </tbody>

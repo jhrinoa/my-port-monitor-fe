@@ -1,4 +1,4 @@
-export class ConnectedAddress {
+export class ConnectedClient {
     ipAddress: string;
     hostName: string;
 }

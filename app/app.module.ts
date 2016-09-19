@@ -11,6 +11,7 @@ import { BaseRequestOptions } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { ServersComponent } from './servers.component';
+import { ConnectedClientsComponent } from './connected-clients.component';
 import { routing }        from './app.routing';
 
 // import { AuthGuard } from './_guards/index';
@@ -27,7 +28,8 @@ import { routing }        from './app.routing';
     ],
     declarations: [
         AppComponent,
-        ServersComponent
+        ServersComponent,
+        ConnectedClientsComponent
         // LoginComponent,
         // HomeComponent
     ],

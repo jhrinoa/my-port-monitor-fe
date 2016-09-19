@@ -1,2 +1,2 @@
-export * from './connected.address';
+export * from './connected.client';
 export * from './server.node';
