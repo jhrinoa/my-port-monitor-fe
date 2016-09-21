@@ -19,6 +19,12 @@ import { routing }        from './app.routing';
 // import { LoginComponent } from './login/index';
 // import { HomeComponent } from './home/index';
 
+import { ClientsService } from './clients.service';
+import { XHRBackend } from '@angular/http';
+
+import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -41,7 +47,11 @@ import { routing }        from './app.routing';
         // providers used to create fake backend
         // fakeBackendProvider,
         // MockBackend,
-        BaseRequestOptions
+        BaseRequestOptions,
+        ClientsService,
+        { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
+        { provide: SEED_DATA, useClass: InMemoryDataService }     // in-mem server data
+        
     ],
     bootstrap: [AppComponent]
 })
