@@ -15,9 +15,11 @@ export class ClientsService {
 
     getClients(serverIp: string): Promise<ConnectedClient[]> {    
         return this.http
-            .get(`app/clients`)
+            .get(`app/clients/?server=${serverIp}`)
             .toPromise()
-            .then(response => response.json().data as ConnectedClient[]);
+            .then(response => {
+                return response.json().data[0].clients as ConnectedClient[];
+            });
     }
 }
 

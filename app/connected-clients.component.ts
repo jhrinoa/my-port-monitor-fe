@@ -16,26 +16,8 @@ export class ConnectedClientsComponent implements OnInit {
     constructor(private clientsService: ClientsService) { }
 
     ngOnInit() {
-        // console.log('selectedServer ip: ' + this.selectedServer.ipAddress);
-        // this.connectedLists = [
-        //     {
-        //         ipAddress: '1.1.1.1',
-        //         hostName: 'test host1'
-        //     },
-        //     {
-        //         ipAddress: '2.2.2.2',
-        //         hostName: 'test host2'
-        //     },
-        //     {
-        //         ipAddress: '3.3.3.3',
-        //         hostName: 'test host3'
-        //     }
-        // ]
-
-        // this.connectedLists = this.clientsService.getClients('10.5.5.125');
-        this.clientsService.getClients('1.1.1.1').then(cl => {
-            debugger;
-            this.connectedLists = cl
+        this.clientsService.getClients('2.2.2.2').then(cl => {            
+            this.connectedLists = cl;
         });
     }
 }
