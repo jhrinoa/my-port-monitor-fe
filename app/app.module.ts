@@ -10,7 +10,6 @@ import { HttpModule } from '@angular/http';
 import { BaseRequestOptions } from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { HomeComponent }  from './home.component';
 import { ServersComponent } from './servers.component';
 import { ConnectedClientsComponent } from './connected-clients.component';
 import { routing }        from './app.routing';
@@ -36,7 +35,6 @@ import { InMemoryDataService } from './in-memory-data.service';
     declarations: [
         AppComponent,
         ServersComponent,
-        HomeComponent,
         ConnectedClientsComponent
     ],
     providers: [

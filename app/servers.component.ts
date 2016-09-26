@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Router }            from '@angular/router';
 import { ServerNode } from './model/index';
 
 @Component({
@@ -10,7 +11,9 @@ export class ServersComponent implements OnInit {
     servers: ServerNode[];
     selectedServer: ServerNode;
 
-    constructor() { }
+    constructor(
+        private router: Router
+    ) { }
 
     // getConnectedList(server): ConnectedClient[] {
     //     // make a request with server.ipAddress and server.port
@@ -32,6 +35,7 @@ export class ServersComponent implements OnInit {
 
     onSelect(server: ServerNode) {
         this.selectedServer = server;
+        this.router.navigate(['/server', this.selectedServer.ipAddress]);
     }
 
     ngOnInit() { 

@@ -2,7 +2,7 @@ export class InMemoryDataService {
   createDb() {
     let clients = [
         {
-            server: '1.1.1.1',
+            server: '10.5.5.125',
             clients: [
                 {
                     ipAddress: '10.1.1.1',
@@ -19,7 +19,7 @@ export class InMemoryDataService {
             ]
         },
         {
-            server: '2.2.2.2',
+            server: '10.5.5.126',
             clients: [
                 {
                     ipAddress: '100.1.1.1',

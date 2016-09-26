@@ -13,13 +13,19 @@ export class ClientsService {
 
     }
 
-    getClients(serverIp: string): Promise<ConnectedClient[]> {    
-        return this.http
-            .get(`app/clients/?server=${serverIp}`)
-            .toPromise()
-            .then(response => {
-                return response.json().data[0].clients as ConnectedClient[];
-            });
+    getClients(serverIp: string): Promise<ConnectedClient[]> {
+        if (serverIp) {
+            return this.http
+                .get(`app/clients/?server=${serverIp}`)
+                .toPromise()
+                .then(response => {
+                    if (response.json().data[0]) {
+                        return response.json().data[0].clients as ConnectedClient[];
+                    } else {
+                        return [] as ConnectedClient[];
+                    }
+                });
+        }
     }
 }
 
