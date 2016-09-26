@@ -13,7 +13,6 @@ import { ServerNode } from './model/index';
     templateUrl: 'connected-clients.component.html'
 })
 export class ConnectedClientsComponent implements OnInit {
-    @Input() selectedServer: ServerNode;
     connectedLists: ConnectedClient[];
     // connectedLists: Observable<ConnectedClient[]>;
 
@@ -25,7 +24,7 @@ export class ConnectedClientsComponent implements OnInit {
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
             let ipAddress = params['ipAddress'];
-            
+
             this.clientsService.getClients(ipAddress)
                 .then(cl => this.connectedLists = cl);
         });
