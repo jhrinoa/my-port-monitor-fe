@@ -35,10 +35,10 @@ export class ServersComponent implements OnInit {
 
     onSelect(server: ServerNode) {
         this.selectedServer = server;
-        this.router.navigate(['/server', this.selectedServer.ipAddress]);
+        this.router.navigate(['/server', this.selectedServer.ipAddress], { skipLocationChange: true });
     }
 
-    ngOnInit() { 
+    ngOnInit() {
         this.servers = [
             {
                 ipAddress: '10.5.5.125',
@@ -49,7 +49,13 @@ export class ServersComponent implements OnInit {
                 ipAddress: '10.5.5.126',
                 hostName: null,
                 port: 9444
+            },
+            {
+                ipAddress: 'test',
+                hostName: null,
+                port: 9445
             }
+
         ];
     }
 }

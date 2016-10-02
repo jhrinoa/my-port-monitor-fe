@@ -1,6 +1,15 @@
-<div>
-    <div *ngFor="let server of connectedLists">
-        <div>{{server.ipAddress}}</div>
-        <div>{{server.hostName}}</div>
-    </div>
-</div>
+<h2>Connected clients of {{serverIpAddr}}</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Hostname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of connectedLists">
+            <td>{{client.ipAddress}}</td>
+            <td>{{client.hostName}}</td>
+        </tr>
+    </tbody>
+</table>

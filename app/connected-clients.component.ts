@@ -15,17 +15,18 @@ import { ServerNode } from './model/index';
 export class ConnectedClientsComponent implements OnInit {
     connectedLists: ConnectedClient[];
     // connectedLists: Observable<ConnectedClient[]>;
+    serverIpAddr: string;
 
-    constructor(
+    constructor(        
         private clientsService: ClientsService,
         private route: ActivatedRoute
     ) { }
 
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
-            let ipAddress = params['ipAddress'];
+            this.serverIpAddr = params['ipAddress'];
 
-            this.clientsService.getClients(ipAddress)
+            this.clientsService.getClients(this.serverIpAddr)
                 .then(cl => this.connectedLists = cl);
         });
     }
