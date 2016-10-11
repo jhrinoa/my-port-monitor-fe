@@ -38,6 +38,14 @@ export class ServersComponent implements OnInit {
         this.router.navigate(['/server', this.selectedServer.ipAddress], { skipLocationChange: true });
     }
 
+    onAdd(ipAddress: string, hostName: string, port: number) {
+        this.servers.push({
+            ipAddress: ipAddress,
+            hostName: hostName,
+            port: port
+        });
+    }
+
     ngOnInit() {
         this.servers = [
             {
